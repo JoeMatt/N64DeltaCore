@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3C915182991A64300842A8B /* DeltaCore in Frameworks */ = {isa = PBXBuildFile; productRef = B3C915172991A64300842A8B /* DeltaCore */; };
 		BF0D528C224D63DB0096DF50 /* INSTALL in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5266224D63DB0096DF50 /* INSTALL */; };
 		BF0D528D224D63DB0096DF50 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5267224D63DB0096DF50 /* LICENSES */; };
 		BF0D528F224D63DC0096DF50 /* mupen64plus-rsp-hle.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = BF0D526C224D63DB0096DF50 /* mupen64plus-rsp-hle.vcxproj */; };
@@ -1419,6 +1420,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C915182991A64300842A8B /* DeltaCore in Frameworks */,
 				BF7994A6224BFDCF009B094F /* libMupen64Plus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3538,7 +3540,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF2EF814224C1BF60032AD78 /* Build configuration list for PBXNativeTarget "N64DeltaCore-Video" */;
 			buildPhases = (
-				BF2EFC4D224C26240032AD78 /* ShellScript */,
+				BF2EFC4D224C26240032AD78 /* Run getRevision.sh */,
 				BF2EF808224C1BF60032AD78 /* Headers */,
 				BF2EF809224C1BF60032AD78 /* Sources */,
 				BF2EF80A224C1BF60032AD78 /* Frameworks */,
@@ -3570,6 +3572,9 @@
 				BF7994A4224BFDB1009B094F /* PBXTargetDependency */,
 			);
 			name = N64DeltaCore;
+			packageProductDependencies = (
+				B3C915172991A64300842A8B /* DeltaCore */,
+			);
 			productName = N64DeltaCore;
 			productReference = BF799014224BF59E009B094F /* N64DeltaCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -3692,7 +3697,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BF2EFC4D224C26240032AD78 /* ShellScript */ = {
+		BF2EFC4D224C26240032AD78 /* Run getRevision.sh */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3701,9 +3706,11 @@
 			);
 			inputPaths = (
 			);
+			name = "Run getRevision.sh";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				$SRCROOT/Mupen64Plus/GLideN64/src/Revision.h,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3987,9 +3994,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4008,6 +4015,7 @@
 				);
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/inc/\"",
 				);
@@ -4025,6 +4033,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-Video";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4041,9 +4050,9 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4060,6 +4069,7 @@
 				);
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/inc/\"",
 				);
@@ -4077,6 +4087,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-Video";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4139,6 +4150,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -4206,6 +4218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -4230,11 +4243,12 @@
 		BF79901D224BF59E009B094F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4244,11 +4258,13 @@
 					GLES_SILENCE_DEPRECATION,
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
+					"\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = N64DeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4259,6 +4275,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -4267,6 +4284,7 @@
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
+					"$(inherited)",
 				);
 			};
 			name = Debug;
@@ -4274,21 +4292,24 @@
 		BF79901E224BF59E009B094F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREPROCESSOR_DEFINITIONS = GLES_SILENCE_DEPRECATION;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
+					"\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = N64DeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4299,6 +4320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4306,6 +4328,7 @@
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
+					"$(inherited)",
 				);
 			};
 			name = Release;
@@ -4315,13 +4338,13 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
+					"$(inherited)",
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -4347,12 +4370,12 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
+					"$(inherited)",
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -4377,9 +4400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4395,6 +4418,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4404,9 +4428,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4421,6 +4445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4475,6 +4500,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3C915172991A64300842A8B /* DeltaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeltaCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF79900B224BF59E009B094F /* Project object */;
 }
