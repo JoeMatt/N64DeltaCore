@@ -6,7 +6,7 @@
 //  Copyright © 2019 Riley Testut. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for N64DeltaCore.
 FOUNDATION_EXPORT double N64DeltaCoreVersionNumber;
