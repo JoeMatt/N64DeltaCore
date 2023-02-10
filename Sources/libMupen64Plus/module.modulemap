@@ -1,0 +1,8 @@
+module SDL {
+    header "SDL/SDL.h"
+    header "SDL/SDL_config.h"
+    header "SDL/SDL_opengles2.h"
+    header "SDL/SDL_thread.h"
+    header "SDL/SDLStubs.h"
+    export *
+}

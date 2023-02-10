@@ -1,0 +1,5 @@
+module N64Bridge {
+    header "N64EmulatorBridge.h"
+    header "N64Types.h"
+    export *
+}
